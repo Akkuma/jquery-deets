@@ -45,3 +45,8 @@ Fires immediately after the animation has completed (if applicable) and after th
 Takes either an integer or the string `'slow'`/`'fast'`
 #### Examples
 `<details open data-deet='{"speed": 0}'>`, `<details open data-deet='{"speed": "fast"}'>`, `<details open data-deet='{"speed": "slow"}'>`, `.deets({speed: 0/'fast'/'slow'})`
+
+## Requirements
+* jQuery 1.7.x
+* jQuery UI 1.8.x
+* **Future:** Alternate version that only requires jQuery 1.7.x
