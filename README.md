@@ -28,14 +28,20 @@ Everything I wasn't satisfied with I solved.
 (currently only supported for auto-initiliazed details)
 
 ## Events
-`deets.opening`
+	deets.opening
+Fires immediately before the widget internally maintains that the details has opened
 
-`deets.opened`
+	deets.opened
+Fires immediately after the animation has completed (if applicable) and after the widget recognizes the details are open 
+	
+	deets.closing
+Fires immediately before the widget internally maintains that the details has closed
 
-`deets.closing`
-
-`deets.closed`
+	deets.closed
+Fires immediately after the animation has completed (if applicable) and after the widget recognizes the details as closed 
 
 ## Options
 ### Speed
 Takes either an integer or the string `'slow'`/`'fast'`
+#### Examples
+`<details open data-deet='{"speed": 0}'>`, `<details open data-deet='{"speed": "fast"}'>`, `<details open data-deet='{"speed": "slow"}'>`, `.deets({speed: 0/'fast'/'slow'})`
