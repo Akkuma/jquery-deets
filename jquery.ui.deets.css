@@ -1,0 +1,5 @@
+details, summary { display: block; }
+details { overflow: hidden; }
+summary { cursor: pointer; }
+details.closed * { display: none; }
+.closed summary { display: block; }

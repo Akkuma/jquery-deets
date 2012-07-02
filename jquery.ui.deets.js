@@ -1,5 +1,5 @@
 ﻿/*
-* jQuery UI Deets v1.0.0
+* jQuery UI Deets v1.0.1
 * Copyright (c) 2012, Gregory Waxman. All rights reserved.
 *
 * Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
@@ -82,6 +82,9 @@ function ($, undefined) {
 
             if (!isDetailsSupported || this.options.speed) {
                 this._polyfillDetails();
+            }
+            else if (!this.isOpen) {
+                this.element.removeClass('closed')
             }
         },
 
