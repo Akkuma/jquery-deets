@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Jquery-deets by Akkuma</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/Akkuma/jquery-deets">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/Akkuma/jquery-deets/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/Akkuma/jquery-deets/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>Jquery-deets</h1>
+          <p>A details polyfill that actually works well</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/Akkuma">Akkuma</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></span>
+        </div>
+
+        <h1>Why Deets?</h1>
+
+<p>You probably already know of or heard of other details polyfill solutions. 
+I took a look at the alternatives available and was not satisfied with any current solutions. 
+I'm not trying to knock the creators, but I'll explain why I wasn't satisfied.</p>
+
+<ul>
+<li>
+<a href="http://mathiasbynens.be/demo/html5-details-jquery">Mathias Byen's demo</a> wasn't working in IE9 for me and
+no support for animating the opening and closing of the details element. 
+It also uses the verbose way to detect browser support when we are long past Chrome 10 (Chrome 17 is current stable).</li>
+<li>
+<a href="https://github.com/manuelbieh/Details-Polyfill">Manuel Bieh's version</a> has no support for animations either, 
+does a lot of things I don't like such as rejquerifying elements, at a glance should be lower performance compared to the other solutions, 
+no way to polyfill when the element comes from a template</li>
+<li>
+<a href="http://akral.bitbucket.org/details-tag/">Akral's demo</a> simply doesn't work in IE7/IE8 and the animation doesn't work in IE9. This was my favorite and had a lot of potential.</li>
+<li>
+<a href="https://github.com/termi/Element.details">Termi's solution</a> lacks animation support and proper IE7 support without loads of extras. 
+If this was a completely pure solution without all the other files needed to support IE7 it would be great.</li>
+</ul><p>Everything I wasn't satisfied with I solved.</p>
+
+<h1>The Deets on Deets</h1>
+
+<ul>
+<li>Supports IE7+, Chrome 12+, FF, Safari (never tested in Opera) and being used in a real product</li>
+<li>Animations that work across all browsers</li>
+<li>Native support without an animation bypasses the polyfill</li>
+<li>Initializes all details elements on load, similar to Manuel Bieh's polyfill, but with the option to manually initialize <code>.deets()</code>
+</li>
+<li>jQuery UI Widget API, <code>deets('open')</code>, <code>deets('close')</code>, <code>deets('toggle')</code>
+</li>
+<li>Fires <code>deets.opening</code>, <code>deets.opened</code>, <code>deets.closing</code>, <code>deets.closed</code> for animated and non-native details</li>
+<li>Uses a single event delegate</li>
+<li>Options can be specified without writing a single line of JavaScript <code>&lt;details open data-deet='{"speed": 0/"fast"/"slow"}'&gt;</code> 
+(currently only supported for auto-initiliazed details)</li>
+</ul><h2>Events</h2>
+
+<pre><code>deets.opening
+</code></pre>
+
+<p>Fires immediately before the widget internally maintains that the details has opened</p>
+
+<pre><code>deets.opened
+</code></pre>
+
+<p>Fires immediately after the animation has completed (if applicable) and after the widget recognizes the details are open </p>
+
+<pre><code>deets.closing
+</code></pre>
+
+<p>Fires immediately before the widget internally maintains that the details has closed</p>
+
+<pre><code>deets.closed
+</code></pre>
+
+<p>Fires immediately after the animation has completed (if applicable) and after the widget recognizes the details as closed </p>
+
+<h2>Options</h2>
+
+<h3>Speed</h3>
+
+<p>Takes either an integer or the string <code>'slow'</code>/<code>'fast'</code></p>
+
+<h4>Examples</h4>
+
+<p><code>&lt;details open data-deet='{"speed": 0}'&gt;</code>, <code>&lt;details open data-deet='{"speed": "fast"}'&gt;</code>, <code>&lt;details open data-deet='{"speed": "slow"}'&gt;</code>, <code>.deets({speed: 0/'fast'/'slow'})</code></p>
+
+<h2>Requirements</h2>
+
+<ul>
+<li>jQuery 1.7.x</li>
+<li>jQuery UI 1.8.x</li>
+<li>
+<strong>Future:</strong> Alternate version that only requires jQuery 1.7.x</li>
+</ul>
+      </section>
+
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><!--<![endif]-->
+    
+  </body>
+</html>
