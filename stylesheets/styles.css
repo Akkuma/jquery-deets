@@ -849,3 +849,8 @@ section #title .credits.right {
     display: none;
   }
 }
+
+/**
+* Custom
+**/
+details details { margin-left: 40px; }
