@@ -50,3 +50,6 @@ Takes either an integer or the string `'slow'`/`'fast'`
 * jQuery 1.7.x
 * jQuery UI 1.8.x
 * **Future:** Alternate version that only requires jQuery 1.7.x
+
+## Demos
+Several demos are available at http://akkuma.github.com/jquery-deets/#demos
