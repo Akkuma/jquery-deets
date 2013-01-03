@@ -80,6 +80,10 @@ function ($, undefined) {
 
             this.isOpen = this.element[0].open || this.element.attr('open');
 
+            this.refresh();
+        },
+
+        refresh: function () {
             if (!isDetailsSupported || this.options.speed) {
                 this._polyfillDetails();
             }
@@ -93,20 +97,21 @@ function ($, undefined) {
             , element = $element[0]
             ;
 
-            this._summaryHeight = $element.find('summary').outerHeight(true);
-
-            this.storeHeights();
+            this._storeHeights();
 
             if (!this.isOpen) {
-                $element.css({ height: this._summaryHeight });
+                $element.css('height', this._summaryHeight);
             }
         },
 
-        storeHeights: function () {
+        _storeHeights: function () {
             var $element = this.element
             , element = $element[0]
             ;
 
+            this._summaryHeight = $element.find('summary').outerHeight(true);
+
+            $element.css('height','');
             if (!isDetailsSupported) {
                 this._detailsHeight = $element.removeClass('closed').outerHeight(true);
             }
@@ -115,8 +120,8 @@ function ($, undefined) {
                 this._detailsHeight = $element.outerHeight(true);
                 element.open = this.isOpen;
             }
-
         },
+
         open: function () {
             open.call(this);
         },
