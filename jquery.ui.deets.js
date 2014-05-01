@@ -74,9 +74,7 @@ function ($, undefined) {
         },
 
         _create: function () {
-            if (this.widgetName !== 'deets') {
-                $.data(this.element[0], 'deets', this);
-            }
+            $.data(this.element[0], 'deets', this);
 
             this.isOpen = this.element[0].open || this.element.attr('open');
 
